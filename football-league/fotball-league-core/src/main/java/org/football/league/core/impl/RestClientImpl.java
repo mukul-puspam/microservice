@@ -1,7 +1,5 @@
 package org.football.league.core.impl;
 
-import java.net.URI;
-
 import org.football.league.core.service.RestClient;
 import org.football.league.core.util.ApiName;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,11 +34,13 @@ public class RestClientImpl implements RestClient{
 		return result;
 	}
 	
+	@Override
 	public Object getApi(ApiName api, String[] queryParamName, String[] queryParamValue, Class<?> responseType) {
 		RestTemplate restTemplate;
 		String apiHostIpPort = env.getProperty(api.name());
 		UriComponentsBuilder builder = null;
 		UriComponents uriComponents = null;
+		builder = UriComponentsBuilder.fromUriString(apiHostIpPort);
 		if (apiHostIpPort != null) {
 			if(queryParamName.length!=0) {
 				for(int i=0;i<queryParamName.length; i++) {
@@ -48,11 +48,10 @@ public class RestClientImpl implements RestClient{
 				}
 			}
 			uriComponents = builder.build(false).encode();
-
 		}
 		try {
 			restTemplate = new RestTemplate();
-			return restTemplate.exchange(uriComponents.toUri(), HttpMethod.GET, null, responseType).getBody();
+			return restTemplate.getForObject(uriComponents.toUri(), responseType);
 		} catch (Exception e) {
 			throw e;
 		}

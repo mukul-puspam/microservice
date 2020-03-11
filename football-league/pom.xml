@@ -7,7 +7,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.2.5.RELEASE</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<relativePath/>
 	</parent>
 	<groupId>io.football</groupId>
 	<artifactId>football-league</artifactId>
@@ -73,7 +73,7 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>country-service</module>
+		<module>football-league-service</module>
 		<module>fotball-league-core</module>
 	</modules>
 </project>

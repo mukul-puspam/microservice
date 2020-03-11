@@ -1,4 +1,4 @@
-package org.country.management.config;
+package org.football.league.management.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -12,7 +12,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
 @EnableSwagger2
-@ComponentScan(basePackages= {"org.football"})
 public class SwaggerConfig {                                    
     @Bean
     public Docket api() { 

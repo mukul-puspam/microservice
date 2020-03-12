@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.2.5.RELEASE</version>
+		<version>2.0.0.RELEASE</version>
 		<relativePath/>
 	</parent>
 	<groupId>io.football</groupId>
@@ -32,7 +32,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
@@ -73,7 +72,8 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>football-league-service</module>
 		<module>fotball-league-core</module>
+		<module>football-league-service</module>
 	</modules>
+	
 </project>
